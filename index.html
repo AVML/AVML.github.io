@@ -139,6 +139,9 @@
                   <li class="nav-chapter">
                      <a href="#Channel">Channel</a>
                   </li>
+                  <li class="nav-chapter">
+                        <a href="#Distribution">Distribution</a>
+                  </li>
          </ul>
       </nav>
       <article class="right-column">
@@ -588,8 +591,28 @@ type Channel struct {
 }
 </pre>
             </section>
+            <a name="Distribution">
+                  <h2 class='chapter-name'>Distribution</h2>
+               </a>
+               <section class="section">
+                  <p >
+                        Distribution
+                  </p>
+   <pre>
 
-            
+type Distribution struct {
+	Allow *Region
+	Deny  *Region
+}
+
+type Region struct {
+	// ISO 3166-1 alpha-2 country codes
+	Country []string
+	// Internet Service Providers
+	ISP []string
+}
+   </pre>
+               </section>          
          </article>
       </div>
    </body>
