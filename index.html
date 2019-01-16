@@ -1,682 +1,596 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Audio Visual Markup Language Reference: About AVML</title>
-      <link rel="stylesheet" type="text/css" href="https://developer.apple.com/library/archive/Resources/1282/CSS/style-1.6.3.css" />
-      <meta charset='utf-8'>
-   </head>
-   <body id="conceptual_flow_with_tasks" class="jazz">
-      <a title="Apple TV Markup Language Reference"></a>
-      <header id="ios_header" class="hideOnPrint hideInXcode">
-         <div class="content-wrapper">
-            </p>
-            <p id="wwdr"><img src="tv.png" height="14px" width="12px" aria-hidden="true" /><a href="https://av-ml.org">av-ml</a></p>
-         </div>
-      </header>
-      <section id="valence">
-         <div class="content-wrapper">
-            <p id="hierarchial_navigation">
-               <span id="book_title">Audio Visual Markup Language Reference</span>
-            </p>
-         </div>
-      </section>
-      <div class="content-wrapper">
-         <nav id="navigator" class="book-parts hideInXcode" role="navigation">
-            <ul class="nav-parts">
-               <li 
-                  class="part-name nav-part-active open-part">
-                  <a href="#">AVML</a>
-                  <ul class="nav-chapters">
-                     <li class="nav-chapter ">
-                        <a href="#" data-renderer-version="2">About AVML</a>
-                     </li>
-                  </ul>
-               </li>
-               <li class="part-name nav-part-active open-part">
-                  <a href="#mediaTypes" >Media Types</a>
-                  <ul class="nav-chapters">
-                     <li class="nav-chapter">
+
+<head>
+   <title>Audio Visual Markup Language Reference: About AVML</title>
+  
+   <meta charset='utf-8'>
+   <style>
+   pre{
+      font-size: 2.0em;
+   }
+   code{
+      font-size: 2.0em;
+   }
+   p{
+      color: rgba(65,65,65,1);
+    font-size: 2em;
+    line-height: 145%;
+    margin-bottom: 15px;
+   }
+
+   .left-column a{
+      color:black;
+    text-decoration: none;
+    font-size: 2em;
+    line-height: 145%;
+   }
+
+
+   body{
+      background-color: rgba(242,242,242,1);
+    color: rgba(0,0,0,1);
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 62.5%;
+    margin: 0 auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+
+    justify-content: center;
+    display: flex;
+   }
+
+   .left-column{
+    background-color: rgba(249,249,249,1);
+    bottom: 0;
+    box-shadow: 0 0 1px darkgray;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    top: 0px;
+    width: 230px;
+
+    
+   }
+  
+
+   .right-column{
+      margin-left: 270px;
+      max-width: 600px;
+      position: relative;
+      display: block;
+      align-content: center;
+      align-items: center;
+   }
+
+   </style>
+</head>
+
+<body> 
+   <div class="top-grid">
+      <nav class="left-column" >
+         <ul class="nav-parts">
+            <li class="part-name nav-part-active open-part">
+              <a href="#" >About AVML</a>
+            </li>
+        
+                  <li class="nav-chapter">
+                     <a href="#Series">Series</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#SeriesPart">SeriesPart</a>
+                  </li>
+                  <li class="nav-chapter">
+                        <a href="#Live">Live</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Media">Media</a>
+                  </li>
+                  <li class="nav-chapter">
+                        <a href="#Header">Header</a>
+                  </li>
+                  <li class="nav-chapter">
                         <a href="#Stream">Stream</a>
                      </li>
-                     <li class="nav-chapter">
-                        <a href="#Series">Series</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#SeriesPart">SeriesPart</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Header">Header</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Media">Media</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Live">Live</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Guide">Guide</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#MediaPart">MediaPart</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Part">Part</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Kind">Kind</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Meta">Meta</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Credit">Credit</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Format">Format</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#CodecType">CodecType</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Codec">Codec</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#VideoSpec">VideoSpec</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#AudioSpec">AudioSpec</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#StreamDisposition">StreamDisposition</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Rel">Rel</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#StationDesc">StationDesc</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Station">Station</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Channel">Channel</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#Rating">Rating</a>
-                     </li>
-                  </ul>
-               </li>
-               <li class="part-name nav-part-active open-part">
-
-                  <a href="#discover">Discover & Search</a>
-                  <ul class="nav-chapters">
-                     <li class="nav-chapter">
-                        <a href="#Discover">Discover</a>
-                     </li>
-                     <li class="nav-chapter">
-                        <a href="#OpenSearch">OpenSearch</a>
-                     </li>   
-                  </ul>
-               </li>
-            </ul>
-         </nav>
-
-
-         <article class="chapter">
-<h2 class='chapter-name'>About AVML</h2>
-           <a name="About"> </a>
-
+                  <li class="nav-chapter">
+                     <a href="#Guide">Guide</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#MediaPart">MediaPart</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Part">Part</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Kind">Kind</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Meta">Meta</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Credit">Credit</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Format">Format</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#CodecType">CodecType</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Codec">Codec</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#VideoSpec">VideoSpec</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#AudioSpec">AudioSpec</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Disposition">Disposition</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Rel">Rel</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#StationDesc">StationDesc</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Station">Station</a>
+                  </li>
+                  <li class="nav-chapter">
+                     <a href="#Channel">Channel</a>
+                  </li>
+         </ul>
+      </nav>
+      <article class="right-column">
+         <h2 class='chapter-name'>About AVML</h2>
+         <a name="About"> </a>
+         <section class="section">
+            <p >
+                Audio Visual Markup Language (AVML)  is the standard markup language for creating media pages and media optimised applications. Media browsers receive AVML documents from a web server or from local storage and render the documents into rich user interfaces. AVML describes the structure of a media page semantically. The appearance is decided by the browser.
+            </p>
+            <p>
+                 AVML documents MUST be encoded using <a href="https://json-st.org/">JSON-ST</a>.
+                 AVML media types are the building blocks of AVML documents/pages. They provide a means to create structured media documents by denoting semantics such as title, description, parts(i.e. episodes, series), cover images and other items. 
+                 
+           </p> 
+           <p >
+              At the root of any media representation is the Media type which may be wrapped by super media types such Series -> SeriesPart or Live. Media type itself may contain other Media type elements (i.e. related media such trailers)
+                Lower level media types alone such Stream or Part without being wrapped by a Media type may not be supported by browsers.
+            </p>
+         <p >
+            To describe a list of unrelated media types in a single page an array should may be used as below
+            <pre>
+[
+ {"@ref": "https://example.com/media1.jsonst"}
+ {"@ref": "https://example.com/media2.jsonst"}
+ {"@ref": "https://example.com/media3.jsonst"}
+]
+            </pre>
+         </p>
+         </section>
+            <a name="Series">
+               <h2 class='chapter-name'>Series</h2>
+            </a>
             <section class="section">
-             
-                           
-      <p class="para">
-  Use Audio Visual Markup Language (AVML) to create individual pages inside of a client app.
-</p>
-<p class="para">
-  You control the flow of a client-server app through hypermedia.
-</p>
-
-
-       
-
-
-
-
-    </section> 
-
-
-
-           <a name="Stream"> <h2 class='chapter-name'>Stream</h2></a>
-            <section class="section">
-               <p class="para">
-                  Stream represents a audio/video stream.
-               </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Stream struct {
-  ID string `json:"@id"`
-  // The original source of the steam. For example if this stream is
-  // the result of a transcoding process Canonical will provide an URI
-  // to the source. This helps us use the source to resume transcoding
-  // for example.
-  Canonical string
-  Index     int    `json:"index,omitempty"`
-  Language  string `json:"language,omitempty"` // Iso639_1
-  Label     string `json:"label,omitempty"`
-
-  Codec       Codec
-  VideoSpec                     // if codec_type is "video"
-  AudioSpec                     // if codec_type is "audio"
-  Disposition StreamDisposition `json:"disposition,omitempty"`
-  Bitrate     string            `json:"bitrate,omitempty"`
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-             <a name="Series"><h2 class='chapter-name'>Series</h2></a>
-            <section class="section">
-               <p class="para">
+               <p>
                   Series represents a tv series.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type Series struct {
-  // the tv series parts/seasons
-  Parts []SeriesPart
+	// The series parts(i.e. seasons)
+	Parts []SeriesPart
 }
-}</code> 
-                     </li>
-                  </ol>
-            </div>
+</pre>
+            </section>
 
-
-
- <a name="SeriesPart"> <h2 class='chapter-name'>SeriesPart</h2></a>
+            <a name="SeriesPart">
+               <h2 class='chapter-name'>SeriesPart</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   SeriesPart represents a series part/season.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
+// SeriesPart Represents a series part/season
 type SeriesPart struct {
-  // e.g. Episodes
-  Parts []Media
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Header"><h2 class='chapter-name'>Header</h2></a>
-            <section class="section">
-               <p class="para">
-                  Header represents media part header.
-               </p>
+	// e.g. Episodes
+	Parts []Media
+}
+</pre>
             </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-
-type Header struct {
-  ContentID   string
-  Name        string
-  Number      int    `json:",omitempty"`
-  Description string `json:",omitempty"`
-  Air         time.Time
-  // trailers/additional meta
-  Related []MediaPart `json:",omitempty"`
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Media"><h2 class='chapter-name'>Media</h2></a>
+            <a name="Live">
+               <h2 class='chapter-name'>Live</h2>
+            </a>
             <section class="section">
-               <p class="para">
-                  Media represents a media container.
-               </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Media struct {
-  // https://en.wikipedia.org/wiki/Breadcrumb_(navigation)
-  Breadcrumbs []Header `json:",omitempty"`
-  // content (e.g  video files). The media content may be split
-  // into multiple files (e.g CD1, CD2 ) even if it's basically
-  // the same movie clip/episode etc
-  Part MediaPart `json:",omitempty"`
-  Meta
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-<a name="Live"><h2 class='chapter-name'>Live</h2></a>
-            <section class="section">
-               <p class="para">
+               <p >
                   Live represents a live media stream.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type Live struct {
-  Media
-  // the media here is actually the program
-  // name (e.g. FOXNews) along with the current
-  // media stream playing. IN the future we may
-  // want to replace Media with a custom type
-  Guide []Guide
-}</code> 
-                     </li>
-                  </ol>
-            </div>
+	Media
+	// The media here is actually the program
+	// name (e.g. ABC-News) along with the current
+	// media stream playing. IN the future we may
+	// want to replace Media with a custom type.
+	// This is basically a scheduled playlist
+	Guide []Guide
+}
+</pre>
+            </section>          
 
-
-<a name="Guide"><h2 class='chapter-name'>Guide</h2></a>
+            <a name="Media">
+               <h2 class='chapter-name'>Media</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
+                  Media represents a media container.
+               </p>
+            <pre>
+
+type Media struct {
+   // Breadcrumb trail provides hierarchical
+   // structure of the media path so that if presented 
+   // as stand-alone it can be identified as part 
+   // of a super media type such Series
+   // https://en.wikipedia.org/wiki/Breadcrumb_(navigation)
+   Breadcrumbs []Header
+
+   // Media Content 
+   Part MediaPart 
+   Meta
+}
+
+            </pre>
+         </section>
+            <a name="Header">
+               <h2 class='chapter-name'>Header</h2>
+            </a>
+            <section class="section">
+               <p >
+                  Header represents media part header.
+               </p>
+<pre>
+
+type Header struct {
+	ContentID   string
+	Name        string
+	Number      int
+	Description string
+	Air         time.Time
+	// Trailers/Related media content
+	Related []MediaPart 
+}
+</pre>
+            </section>
+         <a name="Stream">
+            <h2 class='chapter-name'>Stream</h2>
+         </a>
+         <section class="section">
+            <p >
+               Stream represents a audio/video stream.
+            </p>
+            <pre>
+
+type Stream struct {
+	Index int
+	// Iso639_1
+	Language string
+	Label    string
+	Codec    Codec
+   enum{
+      VideoSpec
+      AudioSpec
+   }
+	Disposition Disposition
+	Bitrate     string
+}
+</pre> 
+         </section>
+
+
+            <a name="Guide">
+               <h2 class='chapter-name'>Guide</h2>
+            </a>
+            <section class="section">
+               <p >
                   Guide represents the tv guide of a live program.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type Guide struct {
-  Start time.Time
-  Stop  time.Time
-  Media
+	Start time.Time
+	Stop  time.Time
+	Media
 }
-</code> 
-                     </li>
-                  </ol>
-            </div>
+</pre>
 
 
-<a name="Part"><h2 class='chapter-name'>Part</h2></a>
-            <section class="section">
-               <p class="para">
-                  Part represents a media part.
-               </p>
             </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Part struct {
-  mime.Mime
-  Streams []Stream
-  Format  Format
-}</code> 
-                     </li>
-                  </ol>
-            </div>
+            <a name="MediaPart">
+                  <h2 >MediaPart</h2>
+               </a>
+               <section class="section">
+                  <p >
+                     
+                  </p>
+<pre>
 
+type MediaPart struct {
+	Part
+	External []Part
+}
+</pre>
+            </section>
 
-
-
-<a name="Kind"><h2 class='chapter-name'>Kind</h2></a>
+<a name="Part">
+               <h2 class='chapter-name'>Part</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
+                  Part represents a media part(i.e. an audio/video file).
+               </p>
+<pre>
+
+type Part struct {
+	mime.Mime
+	Streams []Stream
+	Format  Format
+}
+</pre>
+            </section>
+
+            <a name="Kind">
+               <h2 class='chapter-name'>Kind</h2>
+            </a>
+            <section class="section">
+               <p >
                   Kind represents the kind of the stream.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type Kind enum {
-  Video 
-  Music
-  MusicVideo
-  Radio
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-
-<a name="Meta"><h2 class='chapter-name'>Meta</h2></a>
+	Video
+	Music
+	MusicVideo
+	Radio
+}
+</pre>
+            </section>
+           
+            <a name="Meta">
+               <h2 class='chapter-name'>Meta</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   Meta represents met info of the stream.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type Meta struct {
-  // genre is music for music files.?
-  Genre   []string `json:",omitempty"`
-  Kind    Kind
-  Country []string `json:",omitempty"`
-  Rating  string   `json:",omitempty"`
-  Credits []Credit
-  Release time.Time `json:",omitempty"`
-}</code> 
-                     </li>
-                  </ol>
-            </div>
+	Genre   []string
+	Kind    Kind
+	Country []string
+	Rating  string
+	Credits []Credit
+	Release time.Time
+}
+</pre>
+            </section>
 
-
-
-
-<a name="Credit"><h2 class='chapter-name'>Credit</h2></a>
+            <a name="Credit">
+               <h2 class='chapter-name'>Credit</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   Credit
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type Credit struct {
-  Name      string
-  Role      string // e.g. actor, director, artist etc
-  Thumbnail string
-  URI       string
+	Name string
+	// e.g. actor, director, artist etc
+	Role      string
+	Thumbnail string
+	URI       string
 }
-</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-
-<a name="CodecType"><h2 class='chapter-name'>CodecType</h2></a>
+</pre>
+            </section>
+            <a name="Format">
+               <h2 class='chapter-name'>Format</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
+                     Format
+               </p>
+<pre>            
+type Format struct {
+	StartTime float64 
+	Duration  time.Duration 
+	Meta      map[string]string 
+}
+</pre>
+</section>
+            <a name="CodecType">
+               <h2 class='chapter-name'>CodecType</h2>
+            </a>
+            <section class="section">
+               <p >
                   CodecType
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type CodecType enum {
-  AudioCodec
-  VideoCodec
-  TrackCodec
-  ImageCodec
-  MetaCodec
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-
-
-<a name="Codec"><h2 class='chapter-name'>Codec</h2></a>
+	AudioCodec
+	VideoCodec
+	TrackCodec
+	ImageCodec
+	MetaCodec
+}
+</pre>
+            </section>
+            
+            <a name="Codec">
+               <h2 class='chapter-name'>Codec</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   Codec
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type Codec struct {
-  Type     CodecType `json:"type,omitempty"`     //e.g. "video audio" ?
-  Name     string    `json:"name,omitempty"`     // h264 for video or ac3 for audio
-  LongName string    `json:"longName,omitempty"` // H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 or  ATSC A/52A (AC-3)
+   Type CodecType
+
+   // h264 for video or ac3 for audio
+   Name string
+
+   // H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10
+   // or  ATSC A/52A (AC-3)
+   LongName string
 }
-</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-
-<a name="VideoSpec"><h2 class='chapter-name'>VideoSpec</h2></a>
+</pre>
+            </section>
+            <a name="VideoSpec">
+               <h2 class='chapter-name'>VideoSpec</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   VideoSpec video specs of the strem.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type VideoSpec struct {
-  FrameRate          string `json:"frameRate,omitempty"`          // 24000/1001
-  Width              int    `json:"width,omitempty"`              // 1912,
-  Height             int    `json:"height,omitempty"`             // 792,
-  SampleAspectRatio  string `json:"sampleAspectRatio,omitempty"`  //  1:1
-  DisplayAspectRatio string `json:"displayAspectRatio,omitempty"` // 239:99
-}</code> 
-                     </li>
-                  </ol>
-            </div>
+<pre>
 
-<a name="AudioSpec"><h2 class='chapter-name'>AudioSpec</h2></a>
+type VideoSpec struct {
+	// 24000/1001
+	FrameRate string
+	// 1912
+	Width int 
+	// 792
+	Height int 
+	//  1:1
+	SampleAspectRatio string 
+	// 239:99
+	DisplayAspectRatio string 
+}
+</pre>
+            </section>
+
+            <a name="AudioSpec">
+               <h2 class='chapter-name'>AudioSpec</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   AudioSpec audio specs of the strem.
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type AudioSpec struct {
-  SampleRate    int64  `json:"sampleRate,omitempty"`    // 48000
-  Channels      int    `json:"channels,omitempty"`      // 6
-  ChannelLayout string `json:"channelLayout,omitempty"` // 5.1(side)
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="StreamDisposition"><h2 class='chapter-name'>StreamDisposition</h2></a>
-            <section class="section">
-               <p class="para">
-                  StreamDisposition
-               </p>
+	// 48000
+	SampleRate int64 `json:",omitempty"`
+	// 6
+	Channels int `json:",omitempty"`
+	// 5.1(side)
+	ChannelLayout string `json:",omitempty"`
+}
+</pre>
             </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-
-type StreamDisposition struct {
-  Default         bool `json:"default,omitempty"`         // 1
-  Dub             bool `json:"dub,omitempty"`             // 0,
-  Original        bool `json:"original,omitempty"`        // 0,
-  Comment         bool `json:"comment,omitempty"`         // 0,
-  Lyrics          bool `json:"lyrics,omitempty"`          // 0,
-  Karaoke         bool `json:"karaoke,omitempty"`         // 0,
-  Forced          bool `json:"forced,omitempty"`          // 0,
-  HearingImpaired bool `json:"hearingImpaired,omitempty"` // 0,
-  VisualImpaired  bool `json:"visualImpaired,omitempty"`  // 0
-  CleanEffects    bool `json:"cleanEffects,omitempty"`    // 0,
-  AttachedPic     bool `json:"attachedPic,omitempty"`     // 0
-  TimedThumbnails bool `json:"timedThumbnails,omitempty"` // 0
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Rel"><h2 class='chapter-name'>Rel</h2></a>
+           
+            <a name="Disposition">
+               <h2 class='chapter-name'>Disposition</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
+                     Disposition
+               </p>
+<pre>
+
+type Disposition struct {
+	Default         bool
+	Dub             bool 
+	Original        bool
+	Comment         bool
+	Lyrics          bool
+	Karaoke         bool
+	Forced          bool 
+	HearingImpaired bool
+	VisualImpaired  bool
+	CleanEffects    bool
+	AttachedPic     bool
+	TimedThumbnails bool
+}
+</pre>
+            </section>
+           
+            <a name="Rel">
+               <h2 class='chapter-name'>Rel</h2>
+            </a>
+            <section class="section">
+               <p >
                   Rel 
                </p>
+<pre>
+
+type Rel enum{
+	Alternative
+	External
+}
+
+</pre>
             </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Rel enum {
-  Alternative
-  External
-}</code> 
-                     </li>
-                  </ol>
-            </div>
 
-
-
-<a name="StationDesc"><h2 class='chapter-name'>StationDesc</h2></a>
+            <a name="StationDesc">
+               <h2 class='chapter-name'>StationDesc</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   StationDesc
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type StationDesc struct {
-  Name     string
-  Channels URI
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Station"><h2 class='chapter-name'>Station</h2></a>
+	Name     string
+	Channels URI
+}
+</pre>
+            </section>
+            <a name="Station">
+               <h2 class='chapter-name'>Station</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   Station
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
 
 type Station struct {
-  ID       string
-  Channels []Channel
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-<a name="Channel"><h2 class='chapter-name'>Channel</h2></a>
+	ID       string
+	Channels []Channel
+}
+</pre>
+            </section>
+         
+            <a name="Channel">
+               <h2 class='chapter-name'>Channel</h2>
+            </a>
             <section class="section">
-               <p class="para">
+               <p >
                   Channel
                </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
+<pre>
+
 type Channel struct {
-  Name          string
-  Thumbnail     string
-  URI           string // self
-  StationURI    string
-  ContainerList URI
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Rating"><h2 class='chapter-name'>Rating</h2></a>
-            <section class="section">
-               <p class="para">
-                  Rating.
-               </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Rating struct {
-  Ratio int // percent positive
-  Count uint
-}</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-
-       
-<a name="Search"><h2 class='chapter-name'>Search</h2></a>
-            <section class="section">
-               <p class="para">
-                  Search.
-               </p>
-            </section>
-            <div class="code-sample">
-                  <ol class="code-lines">
-                     <li>
-<code class="code-voice">
-type Search struct {
-  Items []string
-  Facet search.FacetResults
-}       
-</code> 
-                     </li>
-                  </ol>
-            </div>
-
-
-
-<a name="Discover"><h2 class='chapter-name'>Discover</h2></a>
-            <section class="section">
-               <p class="para">
-                  Client application should use <a href="https://tools.ietf.org/html/rfc7033">WebFinger</a> protocol using "http://av-ml.org" as "rel" parameter. 
-               </p>
-</section>
-
-<a name="OpenSearch"><h2 class='chapter-name'>OpenSearch</h2></a>
-            <section class="section">
-               <p class="para">
-                  Client application should use <a href="http://www.opensearch.org/Home">OpenSearch</a>.
-               </p>
+   Name          string
+   Thumbnail     string
+   StationURI    string 
+   ContainerList URI
+}
+</pre>
             </section>
 
+            
          </article>
-
       </div>
    </body>
-   </div>
-   </div>
 </html>
