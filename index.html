@@ -131,9 +131,6 @@
                      <a href="#Rel">Rel</a>
                   </li>
                   <li class="nav-chapter">
-                     <a href="#StationDesc">StationDesc</a>
-                  </li>
-                  <li class="nav-chapter">
                      <a href="#Station">Station</a>
                   </li>
                   <li class="nav-chapter">
@@ -543,21 +540,7 @@ type Rel enum{
 </pre>
             </section>
 
-            <a name="StationDesc">
-               <h2 class='chapter-name'>StationDesc</h2>
-            </a>
-            <section class="section">
-               <p >
-                  StationDesc
-               </p>
-<pre>
-
-type StationDesc struct {
-	Name     string
-	Channels URI
-}
-</pre>
-            </section>
+    
             <a name="Station">
                <h2 class='chapter-name'>Station</h2>
             </a>
@@ -566,10 +549,11 @@ type StationDesc struct {
                   Station
                </p>
 <pre>
-
-type Station struct {
-	ID       string
-	Channels []Channel
+type Station struct{
+   Name        string
+   Thumbnail   string
+   Description string
+   Channels    string
 }
 </pre>
             </section>
@@ -584,10 +568,10 @@ type Station struct {
 <pre>
 
 type Channel struct {
-   Name          string
-   Thumbnail     string
-   StationURI    string 
-   ContainerList URI
+   Name       string
+   Thumbnail  string
+   StationURI string
+   MediaList string
 }
 </pre>
             </section>
