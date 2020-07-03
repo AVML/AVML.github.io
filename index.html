@@ -600,19 +600,9 @@ type Disposition struct {
       Title       string
       Description string
       Image       []Image
-      Items  []Item
-      // optional
+      Items  []
+      // Optional
       Hits uint64
-   }   
-
-   type Item struct {
-      @id         string
-      @type enum{
-         // a qualified type name using the template
-         // av-ml.org/#{$Type} where $type is an existing avml type
-         // e.g. av-ml.org/tag.Media, av-ml.org/tag.Collection etc
-         av-ml.org/#{$Type}
-      }
    }
 </pre>
             </section>
