@@ -127,12 +127,6 @@
                      <a href="#Disposition">Disposition</a>
                   </li>
                   <li class="nav-chapter">
-                     <a href="#Station">Station</a>
-                  </li>
-                  <li class="nav-chapter">
-                     <a href="#Channel">Channel</a>
-                  </li>
-                  <li class="nav-chapter">
                      <a href="#Collection">Collection</a>
                   </li>
                   <li class="nav-chapter">
@@ -543,50 +537,8 @@ type Disposition struct {
            
   
     
-            <a name="Station">
-               <h2 class='chapter-name'>Station</h2>
-            </a>
-            <section class="section">
-               <p >
-                  Station
-               </p>
-<pre>
-
-   type Station struct {
-      Name        string
-      Image       []Image
-      Description string
-      // uri to Collection with items
-      // of type Channel
-      Channels string
-      // uri to Collection with items
-      // featured
-      Featured string
-      // OpenSearch description document
-      OpenSearch string
-   }
-</pre>
-            </section>
-         
-            <a name="Channel">
-               <h2 class='chapter-name'>Channel</h2>
-            </a>
-            <section class="section">
-               <p >
-                  Channel
-               </p>
-<pre>
-
-   type Channel struct {
-      Name        string
-      Description string
-      Image       []Image
-      // Media list URI
-      MediaList string
-   }
-</pre>
-            </section>
-            <a name="Collection">
+ 
+<a name="Collection">
                <h2 class='chapter-name'>Collection</h2>
             </a>
             <section class="section">
@@ -594,15 +546,30 @@ type Disposition struct {
                   Collection
                </p>
 <pre>
+
    type Collection struct {
-      Name       string
+      Name        string
       Description string
       Image       []Image
-      // Items is an array of items of any type
-      // Use @ref tags instead of expanded objects
-      Items  []
-      // Optional
-      Hits uint64
+      // URI to default items list of type List
+      Default string
+   
+      // URI to featured items list of type List
+      Featured string
+   
+      // URI to `OpenSearch` description document
+      OpenSearch string
+   }
+   
+   type List struct {
+      Items  []Item
+      Next   string
+      Hits   uint64
+   }
+   
+   type Item struct {
+      @ref   string
+      @type {$Type}
    }
 </pre>
             </section>
