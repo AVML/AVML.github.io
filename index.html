@@ -230,12 +230,11 @@
                   Media represents a media container.
                </p>
             <pre>
-type MediaPart struct {
-	Part
-	// Containers that should to be muxed with the streams within Part
-	// on play. E.g. external subtitles
-	External []Part
-}
+               type Media struct {
+                  Header
+                  Part MediaPart
+                  Meta
+               }
             </pre>
          </section>
             <a name="Header">
