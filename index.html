@@ -176,10 +176,8 @@
       Name        string
       Description string
       Image       []Image
-      // URI list of type Related
-      Related []string
-      // URI list of type SeriesPart
-      Parts []string
+      Related []Related
+      Parts []SeriesPart
    }
 </pre>
             </section>
@@ -198,7 +196,7 @@
       // e.g. Episodes
       Header
       // Type Media
-      Parts []string
+      Parts []Media
    }
 </pre>
             </section>
@@ -251,8 +249,8 @@
       Number      int
       Description string 
       Air         time
-      // URI of type Related to Trailers/Related media content
-      Related []string
+      //  Trailers/Related media content
+      Related []Related
       Image   []Image
    }
 </pre>
@@ -550,25 +548,21 @@ type Disposition struct {
       Name        string
       Description string
       Image       []Image
-      // URI to default items list of type List
-      Default string
+      // Default items
+      Default List
    
-      // URI to featured items list of type List
-      Featured string
+      // Featured items list
+      Featured List
    
       // URI to `OpenSearch` description document
       OpenSearch string
    }
    
    type List struct {
-      Items  []Item
-      Next   string
+      Items  []Any
       Hits   uint64
-   }
-   
-   type Item struct {
-      @ref   string
-      @type {$Type}
+      // next cursor uri
+      @next   string
    }
 </pre>
             </section>
