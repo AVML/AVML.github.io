@@ -417,7 +417,7 @@ type Meta struct {
                </p>
 <pre>            
 type Format struct {
-	StartTime float64
+	StartTime float
 	Duration  time.Duration 
 }
 </pre>
@@ -497,7 +497,7 @@ type VideoSpec struct {
 
 type AudioSpec struct {
 	// 48000
-	SampleRate int64
+	SampleRate int
 	// 6
 	Channels int
 	// 5.1(side)
@@ -560,7 +560,7 @@ type Disposition struct {
    
    type List struct {
       Items  []Any
-      Hits   uint64
+      Hits   uint
       // next cursor uri
       @next   string
    }
