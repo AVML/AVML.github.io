@@ -336,6 +336,7 @@ type Stream struct {
       Content-Type ContentType
       Streams []Stream
       Format  Format
+      Ad Ad
    }
 
 type ContentType struct {
@@ -348,6 +349,11 @@ type ContentType struct {
 type NameValue struct {
 	Name  string
 	Value string
+}
+
+type Ad struct{
+   // Vast URI tag
+   Tag string
 }
 </pre>
             </section>
