@@ -209,11 +209,6 @@
                </p>
 <pre>
    type Live struct {
-      Part MediaPart
-      // The media here is actually the program
-      // name (e.g. FOXNews) along with the current
-      // media stream playing. In the future we may
-      // want to replace Media with a custom type.
       // This is basically a scheduled playlist
       Guide []Guide
    }
@@ -289,13 +284,9 @@ type Stream struct {
                </p>
 <pre>
    type Guide struct {
-      // When the program
-      // is scheduled to start
-      Start time.Time
-
       Header
-
       Meta
+      Part MediaPart
    }
 
 
@@ -337,6 +328,7 @@ type Stream struct {
       Streams []Stream
       Format  Format
       Ad Ad
+      License License
    }
 
 type ContentType struct {
@@ -354,6 +346,11 @@ type NameValue struct {
 type Ad struct{
    // Vast URI tag
    Tag string
+}
+
+type License struct{
+   // License uri
+   Content-ID string
 }
 </pre>
             </section>
@@ -388,10 +385,39 @@ type Kind enum {
 type Meta struct {
 	Genre   []string
 	Kind    Kind
-	Country []string
-	Rating  string
+	Country []string 
 	Credits []Credit
-	Release time.Time
+   Release time.Time
+   Rating  Rating    `json:",omitempty"`
+	Review  Review    `json:",omitempty"`
+}
+
+// Rating system aimed at giving parents
+// the information they need to decide
+// whether a film is appropriate for their family.
+type Rating struct {
+	// codes provided by different organisations such MPA
+	// filmratings.com
+	// e.g.  PG-13, NC-17
+	Code string
+}
+
+
+type Review struct {
+	// Overall rating score
+	// based on the ratings received
+	Score    float
+	Messages []ReviewMessage
+}
+
+type ReviewMessage struct {
+	// Review title
+	Name string
+	// Review body
+	Body string
+	// A score from 1 to 10
+	// where 10 is the highest score
+	Score uint
 }
 </pre>
             </section>
