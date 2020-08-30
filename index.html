@@ -182,6 +182,7 @@
       Image       []Image
       Related []Related
       Parts []SeriesPart
+      Meta MetaSeries
    }
 </pre>
             </section>
@@ -202,7 +203,22 @@
       // Episodes
       // Type Media
       Parts List
+      Meta MetaSeries
+
    }
+
+
+type MetaSeries struct {
+	Genre   []string 
+	Country []string
+	Credits []Credit
+	Release struct{
+      From date
+	   To   date
+   }
+	Rating  []Rating
+	Review  Review
+}
 </pre>
             </section>
             <a name="Live">
