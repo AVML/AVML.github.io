@@ -657,7 +657,25 @@ type Image struct {
 	Content-ID string
 	Width     uint
 	Height    uint
-	Role      string
+	Role      enum{
+	   // poster replicates the movie posters often seen in cinema complexes,
+	   // or the front cover of home video releases, and contain a clearly
+	   // visible logo or name of the video.
+	   "poster"
+	   // poster-clear is a poster without text or a logo.
+	   "poster-clear"
+	   // landscape is a Poster with a wide aspect ratio
+	   // e.g. 16:9
+	   "landscape"
+	   // landscape-clear is a landscape without text or a logo.
+	   "landscape-clear"
+	   // Used as full screen displays.
+	   "fullscreen"
+	   // fullscreen-clear is a fullscreen without text or a logo.
+	      "fullscreen-clear"
+)
+
+   }
 }
 </pre>
 </section>  
