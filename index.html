@@ -155,7 +155,7 @@
          <p>AVML media type is "application/av-ml".</p>
          <p>
            Within <a href="https://json-st.org/">JSON-ST</a> documents the types must be referenced using a fully qualified namespace. 
-           The template of the namespace is <code>av-ml.org/#{$Type}</code> where <code>{$Type}</code> is the existing avml type.
+           The template of the namespace for AV-ML documents is <code>av-ml.org/#{$Type}</code> where <code>{$Type}</code>
          </p>
          <p>
             All date fields must use <a href="https://tools.ietf.org/html/rfc3339">rfc3339</a> format
@@ -232,6 +232,8 @@ type MetaSeries struct {
    type Live struct {
       // This is basically a scheduled playlist
       Guide []Guide
+      // List of programs offered on demand (VOD)
+      OnDemand List
    }
 </pre>
             </section>          
@@ -264,7 +266,6 @@ type MetaSeries struct {
       Name        string
       Number      int
       Description string 
-      Air         time
       //  Trailers/Related media content
       Related []Related
       Image   []Image
@@ -305,9 +306,8 @@ type Stream struct {
                </p>
 <pre>
    type Guide struct {
-      Header
-      Meta
-      Part MediaPart
+      Air         time
+      Media
    }
 
 
