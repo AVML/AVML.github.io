@@ -124,9 +124,6 @@
                      <a href="#AudioSpec">AudioSpec</a>
                   </li>
                   <li class="nav-chapter">
-                     <a href="#Disposition">Disposition</a>
-                  </li>
-                  <li class="nav-chapter">
                      <a href="#Collection">Collection</a>
                   </li>
                   <li class="nav-chapter">
@@ -230,6 +227,7 @@ type MetaSeries struct {
                </p>
 <pre>
    type Live struct {
+      Part Part
       // This is basically a scheduled playlist
       Guide []Guide
       // List of programs offered on demand (VOD)
@@ -307,7 +305,8 @@ type Stream struct {
 <pre>
    type Guide struct {
       Air         time
-      Media
+      Header
+      Meta
    }
 
 
@@ -560,35 +559,6 @@ type AudioSpec struct {
 }
 </pre>
             </section>
-           
-            <a name="Disposition">
-               <h2 class='chapter-name'>Disposition</h2>
-            </a>
-            <section class="section">
-               <p >
-                     Disposition
-               </p>
-<pre>
-
-type Disposition struct {
-	Default         bool
-	Dub             bool 
-	Original        bool
-	Comment         bool
-	Lyrics          bool
-	Karaoke         bool
-	Forced          bool 
-	HearingImpaired bool
-	VisualImpaired  bool
-	CleanEffects    bool
-	AttachedPic     bool
-	TimedThumbnails bool
-}
-</pre>
-            </section>
-           
-  
-    
  
 <a name="Collection">
                <h2 class='chapter-name'>Collection</h2>
