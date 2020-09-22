@@ -206,6 +206,12 @@
 
 
 type MetaSeries struct {
+   Language struct{
+      // Iso639_1
+      Audio []string
+      // Iso639_1
+      Text []string
+   }
 	Genre   []string 
 	Country []string
 	Credits []Credit
@@ -280,9 +286,6 @@ type MetaSeries struct {
             <pre>
 
 type Stream struct {
-	// Iso639_1
-	Language string
-	Label    string
 	Codec    Codec
    enum{
       VideoSpec
@@ -403,6 +406,12 @@ type Kind enum {
 <pre>
 
 type Meta struct {
+   Language struct{
+      // Iso639_1
+      Audio []string
+      // Iso639_1
+      Text []string
+   }
 	Genre   []string
 	Kind    Kind
 	Country []string 
