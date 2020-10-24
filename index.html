@@ -233,8 +233,10 @@ type MetaSeries struct {
                </p>
 <pre>
    type Live struct {
+      // Name of the stream (i.e BBC)
+      Name string
       Part Part
-      // This is basically a scheduled playlist
+      // Guide represents the TV guide, basically a scheduled playlist
       Guide []Guide
       // List of programs offered on demand (VOD)
       OnDemand List
@@ -293,6 +295,7 @@ type Stream struct {
    }
 	Bitrate     string
 }
+
 </pre> 
          </section>
 
@@ -310,8 +313,6 @@ type Stream struct {
       Header
       Meta
    }
-
-
 </pre>
 
 
@@ -416,8 +417,8 @@ type Meta struct {
 	Country []string 
 	Credits []Credit
    Release date
-   Rating  []Rating    `json:",omitempty"`
-	Review  Review    `json:",omitempty"`
+   Rating  []Rating  
+	Review  Review 
 }
 
 // Rating system aimed at giving parents
