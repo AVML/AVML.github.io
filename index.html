@@ -582,17 +582,15 @@ type AudioSpec struct {
       Name        string
       Description string
       Image       []Image
-      // Default items
-      Default List
-   
-      // Featured items list
-      Featured List
+      // List of lists
+      List []List
    
       // URI to `OpenSearch` description document
       OpenSearch string
    }
    
    type List struct {
+      Name string
       Items  []Any
       Hits   uint
       // next cursor uri
