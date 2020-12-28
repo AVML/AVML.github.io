@@ -192,8 +192,7 @@
       // Season
       Header
       // Episodes
-      // Type Media
-      Parts List
+      Parts List(Items: Media)
       Meta MetaSeries
 
    }
@@ -233,7 +232,7 @@ type MetaSeries struct {
       // Guide represents the TV guide, basically a scheduled playlist
       Guide []Guide
       // List of programs offered on demand (VOD)
-      OnDemand List
+      OnDemand List(Items: Any)
    }
 </pre>
             </section>          
@@ -369,6 +368,7 @@ type Ad struct{
 type License struct{
    // License uri
    Content-ID string
+   Name string
 }
 </pre>
             </section>
@@ -396,7 +396,7 @@ type Kind enum {
             </a>
             <section class="section">
                <p >
-                  Meta represents met info of the stream.
+                  Meta provides meta on the streams available in the media document.
                </p>
 <pre>
 
@@ -430,8 +430,9 @@ type Rating struct {
 type Review struct {
 	// Overall rating score
 	// based on the ratings received
-	Score    float
-	Messages []ReviewMessage
+   Score    float
+   // List of ReviewMessage
+	Messages List(Items: []ReviewMessage)
 }
 
 type ReviewMessage struct {
@@ -578,7 +579,7 @@ type AudioSpec struct {
       Description string
       Image       []Image
       // List of lists
-      Lists []List
+      Lists []List(Items: List)
    
       // URI to `OpenSearch` description document
       OpenSearch string
