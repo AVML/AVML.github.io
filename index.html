@@ -10,9 +10,7 @@
       font-size: 2.0em;
    }
 
-   code{
-      font-size: 2.0em;
-   }
+ 
 
    p{
     color: rgba(65,65,65,1);
@@ -141,18 +139,14 @@
             <p >
                 Audio Visual Markup Language (AVML)  is the standard markup language for creating media pages and media optimised applications. Usually media browsers receive AVML documents from a web server or from local storage and render the documents into rich user interfaces. AVML describes the structure of a media page semantically. The appearance is decided by the browser.
             </p>
-           <p >
-              At the root of any media representation is the Media type which may be wrapped by super media types such Series, Live etc. Media type itself may contain other Media type elements (i.e. related media such trailers)
-                Lower level media types alone such Stream or Part without being wrapped by a Media type may not be supported by browsers.
-            </p>
             <p>
                AVML documents MUST be encoded using <a href="https://json-st.org/">JSON-ST</a>.
-               AVML media types are the building blocks of AVML documents/pages. They provide a means to create structured media documents by denoting semantics such as title, description, parts(i.e. episodes, series), cover images and other items. 
+               AVML media types are the building blocks of AVML documents/pages. They provide means to create structured media documents by denoting semantics such as title, description, parts(i.e. episodes, series), cover images and other items. 
          </p> 
-         <p>AVML media type is "application/av-ml".</p>
+         <p>AVML media type is  <code>application/av-ml</code>.</p>
          <p>
            Within <a href="https://json-st.org/">JSON-ST</a> documents the types must be referenced using a fully qualified namespace. 
-           The template of the namespace for AV-ML documents is <code>av-ml.org/#{$Type}</code> where <code>{$Type}</code>
+           The template of the namespace for AV-ML documents is <code>av-ml.org/#{$Type}</code> where {$Type} represents the <code>type</code> of the document.
          </p>
          <p>
             All date fields must use <a href="https://tools.ietf.org/html/rfc3339">rfc3339</a> format
